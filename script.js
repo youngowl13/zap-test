@@ -7,11 +7,11 @@ let songItems = Array.from(document.getElementsByClassName('songItem'));
 let mastersong = document.getElementById('mastersong');
 
 let songs = [
-    {songname:"Acoustic breeze" , filePath: "/music/acousticbreeze.mp3" , coverPath: "/cover/acousticbreeze.jpg"},
-    {songname:"A new beginning" , filePath: "/music/anewbeginning.mp3" , coverPath: "/cover/anewbeginning.jpg"},
-    {songname:"Buddy" , filePath: "/music/buddy.mp3" , coverPath: "/cover/buddy.jpg"},
-    {songname:"Creative minds" , filePath: "/music/creativeminds.mp3" , coverPath: "/cover/creativeminds.jpg"},
-    {songname:"Cute" , filePath: "/music/cute.mp3" , coverPath: "/cover/cute.jpg"},
+    {songname:"Acoustic breeze" , filePath: "./music/acousticbreeze.mp3" , coverPath: "./cover/acousticbreeze.jpg"},
+    {songname:"A new beginning" , filePath: "./music/anewbeginning.mp3" , coverPath: "./cover/anewbeginning.jpg"},
+    {songname:"Buddy" , filePath: "./music/buddy.mp3" , coverPath: "./cover/buddy.jpg"},
+    {songname:"Creative minds" , filePath: "./music/creativeminds.mp3" , coverPath: "./cover/creativeminds.jpg"},
+    {songname:"Cute" , filePath: "./music/cute.mp3" , coverPath: "./cover/cute.jpg"},
 ]
 
 let audioElement = new Audio(songs[songIndex].filePath);
