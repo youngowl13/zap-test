@@ -12,38 +12,51 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-nav {
-    font-family: 'Varela Round', sans-serif;
-}
-
-nav ul {
-    display: flex;
-    align-items: center;
-    height: 60px;
-    background-color: black;
-}
-
-nav ul li {
+li {
     list-style: none;
-    font-weight: bolder;
-    padding: 0 12px;
+    text-decoration: none;
+}
+
+.nav-bar {
+    font-family: 'Varela Round', sans-serif;
+    min-width: 450px;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.left-section {
+    display: flex;
+    flex-direction: row;
+    margin: 0 1rem;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: row;
+    margin: 0 1rem;
+}
+
+.right-section>li {
+    padding: 1rem;
+}
+
+.nav-bar>ul>li {
     background: -webkit-linear-gradient( #eee, #6b705c , #eee);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: .5s all;
 }
 
-nav ul li:hover {
+.nav-bar>ul>li:hover {
     background: -webkit-linear-gradient(#39FF14, #39FF14);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.left-section {
-    display: flex;
-    flex-direction: row;
-
-}
 
 #logo img{
     width: 48px;
@@ -54,9 +67,10 @@ nav ul li:hover {
     display: flex;
     align-items: center;
     font-size: 1.3rem;
-}
+} 
 
 .container {
+    min-width: 350px;
     min-height: 70vh;
     background-color: black;
     color: ivory;
@@ -68,7 +82,7 @@ nav ul li:hover {
     padding: 34px;
     background-image: url('./assets/cover.jpg');
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: center;
     background-size: 400px;
 }
 
@@ -92,8 +106,9 @@ nav ul li:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
-    height: 130px;
+    height: 120px;
+    min-height: 100px;
+    min-width: 450px;
     background-color: black;
     bottom: 0;
     color: ivory;
@@ -189,4 +204,15 @@ nav ul li:hover {
     -webkit-text-fill-color: transparent;
     box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
     transform: translateY(-0.025em);
+}
+
+/* Media Queries */
+
+@media (max-width : 655px) {
+
+    #progressBar {
+        margin-top: 10px;
+        width: 50vw;
+        cursor: pointer;
+    }
 }
