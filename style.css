@@ -70,7 +70,7 @@ li {
 } 
 
 .container {
-    min-width: 400px;
+    min-width: 350px;
     min-height: 70vh;
     background-color: black;
     color: ivory;
@@ -214,5 +214,13 @@ li {
         margin-top: 10px;
         width: 50vw;
         cursor: pointer;
+    }
+}
+
+@media (max-width : 450px) {
+    
+    .container {
+        padding: 20px;
+        background-size: 350px;
     }
 }
