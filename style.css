@@ -19,7 +19,7 @@ li {
 
 .nav-bar {
     font-family: 'Varela Round', sans-serif;
-    min-width: 450px;
+    min-width: 500px;
     display: flex;
     flex-direction: row;
     background-color: black;
@@ -70,7 +70,7 @@ li {
 } 
 
 .container {
-    min-width: 350px;
+    min-width: 450px;
     min-height: 70vh;
     background-color: black;
     color: ivory;
@@ -108,7 +108,7 @@ li {
     justify-content: center;
     height: 120px;
     min-height: 100px;
-    min-width: 450px;
+    min-width: 500px;
     background-color: black;
     bottom: 0;
     color: ivory;
