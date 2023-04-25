@@ -31,4 +31,4 @@ jobs:
                   name: ZAP Report
                   path: zap-report.html
               env:
-                  GITHUB_TOKEN: ${{ secrets.test }}
+                  GITHUB_TOKEN: ${{ secrets.TEST }}
