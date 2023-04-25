@@ -16,20 +16,15 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v2
-            - name: Setup Node.js
-              uses: actions/setup-node@v1
               with:
-                  node-version: "14"
-            - name: Install dependencies
-              run: npm ci
-            - name: Start ZAP proxy
-              run: |
-                  zap.sh -daemon -port 8080 -host 0.0.0.0 -config api.disablekey=true -config api.addrs.addr.name=.* -config api.addrs.addr.regex=true &
-                  sleep 10
+                  ref: main
+
             - name: Run ZAP scan
-              run: |
-                  zap-cli --zap-url https://hitesh22rana.github.io/Spotify-Clone -s zap-session.session https://hitesh22rana.github.io/Spotify-Clone -r zap-report.html -x zap-report.xml --spider
-                  zap-cli --zap-url https://hitesh22rana.github.io/Spotify-Clone -s zap-session.session -T 60 -r zap-report.html -x zap-report.xml --active-scan --scanners all
+              uses: zaproxy/action-full-scan@v0.4.0
+              with:
+                  target: "https://hitesh22rana.github.io/Spotify-Clone/"
+                  cmd_options: "-a"
+
             - name: Save ZAP report
               uses: actions/upload-artifact@v2
               with:
