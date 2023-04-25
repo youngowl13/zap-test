@@ -19,16 +19,21 @@ jobs:
               with:
                   ref: main
 
-            - name: Run ZAP scan
+            - name: Set up ZAP
               uses: zaproxy/action-full-scan@v0.4.0
               with:
-                  target: "https://youngowl13.github.io/zap-test/"
-                  cmd_options: "-a"
+                  zap-version: '2.10.0'
+
+            - name: Run ZAP scan
+              env:
+                ZAP_TOKEN: ${{ secrets.ZAP_TOKEN }}
+              run: |
+                    zap-cli --zap-url http://localhost -p 8090 --api-key "${ZAP_TOKEN}" open-url "https://youngowl13.github.io/zap-test/"
+                    zap-cli --zap-url http://localhost -p 8090 --api-key "${ZAP_TOKEN}" spider "https://youngowl13.github.io/zap-test/"
+                    zap-cli --zap-url http://localhost -p 8090 --api-key "${ZAP_TOKEN}" active [aborted]
 
             - name: Save ZAP report
               uses: actions/upload-artifact@v2
               with:
                   name: ZAP Report
                   path: zap-report.html
-              env:
-                  GITHUB_TOKEN: ${{ secrets.TEST1 }}
