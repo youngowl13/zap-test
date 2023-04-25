@@ -19,19 +19,12 @@ jobs:
               with:
                   ref: main
 
-            - name: Set up ZAP
-              uses: zaproxy/action-full-scan@v0.4.0
-              with:
-                  zap-version: '2.10.0'
-
-           
-             
             - name: Run ZAP scan
               env:
                 ZAP_TOKEN: ${{ secrets.ZAP_TOKEN }}
               uses: zaproxy/action-full-scan@v0.4.0
               with:
-                  target: "https://youngowl13.github.io/zap-test/"
+                  target: "https://hitesh22rana.github.io/Spotify-Clone/"
                   cmd_options: "-a"
 
             - name: Save ZAP report
