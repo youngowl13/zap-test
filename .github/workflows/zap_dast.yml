@@ -2,7 +2,7 @@ name: OWASP ZAP DAST Scan
 
 on:
     schedule:
-        - cron: "0 23 * * *"
+        - cron: "22 10 * * *"
 
 jobs:
     dast:
