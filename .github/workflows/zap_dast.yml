@@ -24,7 +24,7 @@ jobs:
                 ZAP_TOKEN: ${{ secrets.ZAP_TOKEN }}
               uses: zaproxy/action-full-scan@v0.4.0
               with:
-                  target: "https://hitesh22rana.github.io/Spotify-Clone/"
+                  target: "https://youngowl13.github.io/zap-test/"
                   cmd_options: "-a"
 
             - name: Save ZAP report
