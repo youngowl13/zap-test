@@ -13,9 +13,9 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Nuclei - Vulnerability Scan
-        run: |
-          nuclei -update-templates
-          nuclei -u https://youngowl13.github.io/zap-test/ -t ~/nuclei-templates/ -o nuclei.log
+        uses: projectdiscovery/nuclei-action@main
+        with:
+          target: https://youngowl13.github.io/zap-test/
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v2
