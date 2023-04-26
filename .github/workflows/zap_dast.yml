@@ -1,4 +1,4 @@
-name: DAST Scan
+name: Install Nuclei
 
 on:
   push:
@@ -6,25 +6,21 @@ on:
       - main
 
 jobs:
-  dast-scan:
+  install-nuclei:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Nuclei
+      - name: Install Python3 and pip3
         run: |
           sudo apt-get update
-          sudo apt-get install -y golang
-          go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
+          sudo apt-get install -y python3-pip
 
-      - name: Run DAST Scan
+      - name: Install Nuclei
         run: |
-          nuclei -update-templates
-          nuclei -u https://youngowl13.github.io/zap-test/ -t ~/nuclei-templates/ -o report.html -t html
+          sudo pip3 install nuclei
 
-      - name: Save Report as Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: dast-report
-          path: report.html
+      - name: Verify Nuclei Installation
+        run: |
+          nuclei -version
