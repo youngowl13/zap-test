@@ -15,7 +15,7 @@ jobs:
       - name: Nuclei - Vulnerability Scan
         uses: projectdiscovery/nuclei-action@main
         with:
-          target: https://example.com
+          target: https://youngowl13.github.io/zap-test/
 
       - name: GitHub Workflow artifacts
         uses: actions/upload-artifact@v2
