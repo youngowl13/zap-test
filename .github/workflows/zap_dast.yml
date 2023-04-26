@@ -21,7 +21,7 @@ jobs:
       - name: Run DAST Scan
         run: |
           nuclei -update-templates
-          nuclei -u https://example.com -t ~/nuclei-templates/ -o report.html -t html
+          nuclei -u https://youngowl13.github.io/zap-test/ -t ~/nuclei-templates/ -o report.html -t html
 
       - name: Save Report as Artifact
         uses: actions/upload-artifact@v2
